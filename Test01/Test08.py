@@ -89,3 +89,35 @@ print(a.values())
 key를 얻는 것과  마찬가지로 Value만 얻고 싶다면 values함수를 사용하면 된다 
 values 함수를 호출하면 dict_values 객체를 돌려준다 
 """
+
+#key : value 요소 모두 얻기 ( items )
+b= {}
+b= a.items()
+print("b =", b)
+print("a.items()=",a.items())
+"""
+items 함수는 key와 value의 쌍을 tuple로 묶은 값을 dict_items 객체로 반환 
+dict_values 객체와 dict_itmes객체 역시 dict_keys 객체처럼 리스트를 사용하는 것과 
+동일하게 사용이 가능하다 
+"""
+
+#key : value 요소 모두 지우기
+a.clear()
+print("a.clear() result = ", a)
+
+#Key 로 value를 얻기
+a ={"name":"Python", "address":"Seoul", "phone":"010-1234-4321"}
+f= a.get("name")
+print(a["name"])
+print(f*2)
+"""
+get(x) 함수는 x라는 key의 value를 돌려준다 . a.get("x") 는 a["x"]와 동일한 
+결과값 받지만, 존재하지 않는 키로 가져오려고 할 경우 a.get("nokey")는 None를 반환한다 
+"""
+
+#해당 key가 dictionary 에 존재하는지를 확인하기
+a ={"name":"Python", "address":"Seoul", "phone":"010-1234-4321"}
+print("name" in a)
+#존재하는 key true 반환
+print("python" in a)
+#존재하지 않는 key false 반환
