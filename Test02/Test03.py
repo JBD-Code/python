@@ -65,11 +65,13 @@ for i in range(2,10):
     print("")
 
 #  list comprehension 사용하기
+"""
 a = [1, 2, 3, 4]
 result = []
 for num in a:
     result.append(num*3)
 print(result)
+"""
 
 
 a = [3, 4, 5, 6]
