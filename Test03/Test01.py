@@ -122,3 +122,62 @@ def say_name(name):
 
 say_name("JAVA")
 say_name("Python")
+
+# 매개변수 초기값 미리 설정하기
+def say_myself(name, version, result=True):
+    print("My name is %s 입니다" %name)
+    print("%s's version is %s" %(name, version))
+    if result :
+        print("True")
+    else :
+        print("False")
+
+say_myself("Python", "3.8")
+
+#함수 안에서 선언한 변수의 효력 범위
+
+a =1
+def vartest(a):
+    a+=1
+vartest(a)
+print(a)
+"""
+def vartest(a):
+    a=a+1
+vartest(3)
+print(a)
+
+"""
+#함수 안에서 함수 밖의 변수를 변경하는 방법
+# return 사용하기
+a = 1
+def vartest(a):
+    a=a+1
+    return a
+
+a= vartest(a)
+print(a)
+
+#global 명령어 사용하기
+b= 1
+def vartest():
+    global b
+    b =b+ 1
+
+vartest()
+print("b=", b)
+"""
+global 명령어를 사용하면 vartest 함수 안의 global b 문장은 
+함수 안에서 함수 밖의 b 변수를 직접사용하겠다는 것이다. 
+"""
+
+#lambda
+"""
+함수를 생성할 때 사용하는 예약어로 def 와 동일한 역할을 한다 
+보통 함수를 한줄로 간결하게 만들거나, def를 사용할 정도로 복잡하지 않거나 
+def를 사용할 수 없는 곳에 주로 사용한다 
+"""
+add = lambda a, b: a+b
+result= add(12,4)
+print("result = %d" %result)
+#lambda 예약어로 만든 함수는 resutn 명령어가 없어도 결과값을 반환한다
